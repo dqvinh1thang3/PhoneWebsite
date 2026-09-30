@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/card.js" defer></script>
+    <title>Mua Sắm</title>
+    <link rel="stylesheet" href="../css/card.css">
+</head>
+<body>
+     <!--HEAD-->
+    <header>
+        <div class="logo">
+            <a href="../index.html">          
+                <img src="../images/logo.png" alt="logo">
+            </a>
+        </div>
+        
+        <div class="search">
+            <img src="../find.png" alt="find">
+        <input type="text" placeholder=" Tìm kiếm sản phẩm..">
+        </div>
+        
+        <div class="user">
+            <img src="../images/user.png" alt="Tài khoản">
+            <div class="user-menu">
+                <p class="user-fullname"></p>
+                <p class="user-username"></p>
+                <button class="login-account">ĐĂNG NHẬP</button>
+                <button class="logout-account">ĐĂNG XUẤT</button>
+            </div>
+        </div>
+    
+    </header>
+
+    <main class="shop">
+        <!-----------------------------Bộ lọc---------------------------------->
+        <aside class="filter">
+
+            <!--------GIÁ-------->
+            <h3 class="head-filter">BỘ LỌC</h3>
+            <h4 class="title-filter">Mức Giá:</h4>
+            <label><input type="radio" name="gia" value="all" checked>
+            Tất cả</label>
+            
+            <label><input type="radio" name="gia" value="under3">
+            Dưới 3 triệu</label>
+
+            <label><input type="radio" name="gia" value="3-6">
+            Từ 3-6 triệu</label>
+
+            <label><input type="radio" name="gia" value="6-9">
+            Từ 6-9 triệu</label>
+
+            <label><input type="radio" name="gia" value="9-13">
+            Từ 9-13 triệu</label>
+            
+            <label><input type="radio" name="gia" value="over13">
+            13 triệu trở lên</label>
+
+                        <!--------sắp xếp-------->
+            <hr class="line">
+            <h4 class="title-filter">Sắp xếp giá:</h4>
+            <label><input type="radio" name="az" value="az">
+            Thấp - Cao</label>
+
+            <label><input type="radio" name="az" value="za">
+            Cao - Thấp</label>
+
+            
+            <!--------ROM-------->
+            <h4 class="title-filter">Bộ Nhớ:</h4>
+            
+            <label><input type="checkbox" name="rom" value="64">
+            64GB</label>
+
+            <label><input type="checkbox" name="rom" value="128">
+            128GB</label>
+
+            <label><input type="checkbox" name="rom" value="256">
+            256GB</label>
+
+            <label><input type="checkbox" name="rom" value="512">
+            512GB</label>
+            
+            <label><input type="checkbox" name="rom" value="1TB">
+            1TB</label>
+
+            <!--------SẠC-------->
+            <h4 class="title-filter">Cáp Sạc:</h4>
+            <label><input type="radio" name="charge" value="all" checked>
+            Tất cả</label>
+            
+            <label><input type="radio" name="charge" value="lightning">
+            Lightning</label>
+
+            <label><input type="radio" name="charge" value="typec">
+            Type-C</label>
+
+
+            <!--------Hz-------->
+            <h4 class="title-filter">Tần số quét:</h4>
+            <label><input type="radio" name="hz" value="all" checked>
+            Tất cả</label>
+            
+            <label><input type="radio" name="hz" value="60">
+            60Hz</label>
+
+            <label><input type="radio" name="hz" value="120">
+            120Hz</label>
+            
+
+
+        </aside>
+        <div class="content">
+        <!---------------------------------HÀNG 1---------------------------------->
+            <p class="no-product"></p>
+            <div class="row"> 
+                <!--MÁY 1/ dòng 1-->
+                <div class="product"
+                    data-price="10590"
+                    data-storage="256"
+                    data-charge="Type-C"
+                    data-hz="60">
+                    <div class="pro-img">
+                        <img src="../images/ip15green.png" alt="iPhone 15">
+                    </div>
+                    <h2 class="name">iPhone 15</h2>
+                    <p class="price">10.590.000đ</p>
+                    <button class="but-xemthem">XEM THÊM</button>
+                </div>
+
+
+                <!--MÁY 2/dòng 1-->
+                
+                <!--MÁY 3/dòng 1-->
+                <div class="product"
+                    data-price="8450"
+                    data-storage="128"
+                    data-charge="Lightning"
+                    data-hz="60">
+                    <div class="pro-img2">
+                        <img src="../images/13pink.png" alt="iphone 13">
+                    </div>
+                    <h2 class="name">iPhone 13</h2>
+                    <p class="price">8.450.000đ</p>
+                    <button class="but-xemthem">XEM THÊM</button>
+                </div>
+    
+
+            <!---------------------------------HÀNG 2---------------------------------->
+                <!--MÁY 1/dòng2-->
+                <div class="product"
+                    data-price="12990"
+                    data-storage="256"
+                    data-charge="Type-C"
+                    data-hz="120">
+                    <div class="pro-img2">
+                        <img src="../images/15problue.png">
+                    </div>
+                    <h2 class="name">iPhone 15 PRO</h2>
+                    <p class="price">12.990.000đ</p>
+                    <button class="but-xemthem">XEM THÊM</button>
+                </div>
+
+                <!--MÁY 2/dòng2-->
+                <div class="product"
+                    data-price="34350"
+                    data-storage="512"
+                    data-charge="Type-C"
+                    data-hz="120">
+                    <span class="sale"> ●   -20% </span>
+                    <div class="pro-img3">
+                        <img src="../images/17maxwhite.png" alt="17white">
+                    </div>
+                    <h2 class="name">iPhone 17 PROMAX</h2>
+                    <p class="price">30.450.000đ</p>
+                    <button class="but-xemthem">XEM THÊM</button>
+                </div>
+
+                <!--MÁY 3/dòng2-->
+                <div class="product"
+                    data-price="8790"
+                    data-storage="256"
+                    data-charge="Lightning"
+                    data-hz="60">
+                    <span class="sale"> ●   -20% </span>
+                    <div class="pro-img2">
+                        <img src="../images/13white.png">
+                    </div>
+                    <h2 class="name">iPhone 13</h2>
+                    <p class="price">8.990.000đ</p>
+                    <button class="but-xemthem">XEM THÊM</button>
+                </div>
+            
+
+            <!---------------------------------HÀNG 3---------------------------------->
+                <!--MÁY 1/dòng3-->
+                <div class="product"
+                    data-price="17390"
+                    data-storage="1TB"
+                    data-charge="Type-C"
+                    data-hz="120">
+                    <span class="sale"> ●   -20% </span>
+                    <div class="pro-img2">
+                        <img src="../images/15maxgray.png">
+                    </div>
+                    <h2 class="name">iPhone 15 PROMAX</h2>
+                    <p class="price">17.390.000đ</p>
+                    <button class="but-xemthem">XEM THÊM</button>
+                </div>
+
+                <!--MÁY 2/dòng3-->
+                <div class="product"
+                    data-price="7200"
+                    data-storage="64"
+                    data-charge="Lightning"
+                    data-hz="60">
+                    <div class="pro-img2">
+                        <img src="../images/12.png">
+                    </div>
+                    <h2 class="name">iPhone 12</h2>
+                    <p class="price">7.200.000đ</p>
+                    <button class="but-xemthem">XEM THÊM</button>
+                </div>
+
+                <!--MÁY 3/dòng3-->
+                <div class="product"
+                    data-price="2990"
+                    data-storage="64"
+                    data-charge="Lightning"
+                    data-hz="60">
+                    <div class="pro-img3">
+                        <img src="../images/x.png">
+                    </div>
+                    <h2 class="name">iPhone Xs</h2>
+                    <p class="price">2.990.000đ</p>
+                    <button class="but-xemthem">XEM THÊM</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<!---------------------------------- FOOT -------------------------------------->
+<footer>
+    <div class="footer-logo">
+        <img src="../images/logo.png" alt="Táo Dai">
+    </div>
+
+    <div class="footer-info">
+        <p>🌍 Address: Tây Hồ - Hà Nội</p>
+        <p> ☎ Hotline: 0979 581 926</p>
+        <p>📨 For work: vinhdo207.cv@gmail.com</p>
+    </div>
+
+    <div class="footer-social">
+    <p>Theo dõi chúng tôi</p>
+
+    <div class="social-icon">
+        <a href="https://web.facebook.com/dqv1thg3" target="_blank">
+            <img src="../images/facebook.png" alt="Facebook">
+        </a>
+
+        <a href="https://www.tiktok.com/@dqvinh1thang3?_r=1&_t=ZS-99cFFg2vhfY" target="_blank">
+            <img src="../images/tiktok.png" alt="TikTok">
+        </a>
+
+        <a href="https://www.instagram.com/dqvinh.1thang3?stkn=YXpnaDk2dnZoYW9t&utm_source=qr" target="_blank">   
+            <img src="../images/instagram.png" alt="Instagram">
+        </a>
+    </div>
+</div>
+</footer>
+<!-------------------------------------------------------
+----------------------- MODAL ---------------------------
+-------------------------------------------------------->
+    <div class="modal">
+        <div class="modal-content">
+            <button class="close">×</button>
+
+            <div class="modal-body">
+
+                <div class="modal-left">
+                    <img class="modal-img" src="" alt="">
+                </div>
+
+                <div class="modal-right">
+                    <div class="profile">
+                        <h2 class="modal-name"></h2>
+                        <hr>
+                        <h3>Thông số:</h3>
+                        <p class="modal-storage"></p>
+                        <p class="modal-charge"></p>
+                        <p class="modal-hz"></p>
+                        <p class="modal-status"><i>Máy mới chưa bóc hộp</i></p>
+                        <p class="modal-warranty"><u>12 Tháng,</u> 1 đổi 1 tại Táo Dai</p>
+                    </div>
+                    
+                    <div class="priceset">
+                    <span class="modal-price"></span>
+                    </div>
+                    <div class="modal-buttons">
+                    <button class="but-cart">THÊM VÀO GIỎ HÀNG</button>
+                    <button class="but-buy">MUA NGAY</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-float">
+        <img src="../images/shopcart.png" alt="Giỏ hàng">
+        <span class="cart-count">0</span>
+    </div>
+
+</body>
+</html>

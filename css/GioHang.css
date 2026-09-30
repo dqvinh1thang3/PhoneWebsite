@@ -1,0 +1,298 @@
+/* ==================== CHUNG ==================== */
+
+body {
+    background-color: rgb(35, 35, 35);
+    color: white;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+/* ==================== ICON GIỎ HÀNG ==================== */
+
+header {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid gray;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.back-cart {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    cursor: pointer;
+}
+
+.back-cart img {
+    width: 40px;
+    transition: transform 0.2s ease;
+}
+
+.back-cart:hover img {
+    transform: scale(1.1);
+}
+/* ==================== HEADER ==================== */
+
+header {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 32px;
+    margin: 0;
+}
+
+
+/* ==================== GIỎ HÀNG ==================== */
+
+.cart-container {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.danhsach {
+    flex: 1;
+}
+
+
+/* ==================== SẢN PHẨM ==================== */
+
+.cart-product {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    background-color: rgb(44, 44, 44);
+    border: 2px solid gray;
+    border-radius: 20px;
+}
+
+.cart-product img {
+    width: 130px;
+    height: 140px;
+    object-fit: contain;
+}
+
+.cart-product h3 {
+    color: white;
+    font-size: 22px;
+    margin: 0;
+}
+
+.cart-product p {
+    color: white;
+    margin: 0;
+}
+
+
+/* ==================== TỔNG TIỀN ==================== */
+
+.cart-total {
+    width: 300px;
+    height: fit-content;
+    padding: 25px;
+    background-color: rgb(44, 44, 44);
+    border: 2px solid gray;
+    border-radius: 20px;
+}
+
+.cart-total h2 {
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.total-price {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.buy-button {
+    width: 100%;
+    padding: 15px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.buy-button:hover {
+    transform: scale(1.03);
+}
+/* ==================== THÔNG TIN SẢN PHẨM ==================== */
+
+.cart-product h3 {
+    width: 200px;
+}
+
+.cart-product p {
+    width: 150px;
+    font-size: 18px;
+}
+
+
+/* ==================== SỐ LƯỢNG ==================== */
+
+.soluong {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.soluong button {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.soluong span {
+    min-width: 20px;
+    text-align: center;
+}
+
+
+/* ==================== NÚT XÓA ==================== */
+
+.delete-button {
+    margin-left: auto;
+    padding: 10px 15px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.delete-button:hover {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    box-shadow: 0 3px 10px black;
+    transform: scale(1.1);
+
+}
+/* ==================== TỔNG ĐƠN HÀNG ==================== */
+
+.cart-total {
+    width: 300px;
+    height: fit-content;
+    padding: 25px;
+    background-color: rgb(44, 44, 44);
+    border: 2px solid white;
+    border-radius: 20px;
+    position: sticky;
+    top: 30px;
+}
+
+.cart-total h2 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.total-price {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.buy-button {
+    width: 100%;
+    padding: 15px;
+    background-color: white;
+    color: black;
+    border: 2px solid white;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.buy-button:hover {
+    background-color: transparent;
+    color: white;
+    transform: scale(1.03);
+    box-shadow: 0 3px 10px white;
+}
+.cart-product img {
+    width: 130px;
+    height: 140px;
+    object-fit: contain;
+    background-color: rgb(55, 55, 55);
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.cart-product h3 {
+    width: 200px;
+    font-size: 22px;
+    margin: 0;
+}
+
+.cart-product p {
+    width: 150px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+.cart-product {
+    transition: transform 0.2s;
+}
+
+.cart-product:hover {
+    transform: translateY(-7px);
+}
+
+/* ==================== TIẾP TỤC MUA SẮM ==================== */
+
+.back-shop {
+    margin-top: 10px;
+    max-height: 200px;
+    padding: 12px 20px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.back-shop:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 60px 20px;
+    color: white;
+}
+
+.empty-cart h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.empty-cart p {
+    color: lightgray;
+}

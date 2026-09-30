@@ -1,0 +1,413 @@
+/* ==================== CHUNG ==================== */
+
+body {
+    margin: 0;
+    background-color: rgb(35, 35, 35);
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+
+/* ==================== HEADER ==================== */
+
+header {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+
+/* ==================== NỘI DUNG ==================== */
+
+.order-container {
+    display: flex;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+
+/* ==================== THÔNG TIN KHÁCH HÀNG ==================== */
+
+.customer-info {
+    flex: 1;
+    padding: 25px;
+    background-color: rgb(44, 44, 44);
+    border: 2px solid gray;
+    border-radius: 20px;
+}
+
+.customer-info h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.customer-info input,
+.customer-info textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    padding: 13px;
+    background-color: rgb(55, 55, 55);
+    color: white;
+    border: 1px solid gray;
+    border-radius: 15px;
+    outline: none;
+}
+
+.customer-info textarea {
+    height: 100px;
+    resize: none;
+}
+
+.customer-info input:focus,
+.customer-info textarea:focus {
+    border-color: white;
+}
+
+
+/* ==================== ĐƠN HÀNG ==================== */
+
+.order-right {
+    width: 300px;
+}
+
+.order-summary {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 25px;
+    background-color: rgb(44, 44, 44);
+    border: 2px solid gray;
+    border-radius: 20px;
+}
+
+.order-summary h2 {
+    margin-top: 0;
+}
+
+.order-total {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+/* ==================== SẢN PHẨM ==================== */
+
+.order-products {
+    margin-bottom: 25px;
+}
+
+.order-product {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.order-product span {
+    color: gray;
+    font-size: 14px;
+}
+
+
+/* ==================== NÚT XÁC NHẬN ĐẶT HÀNG ==================== */
+
+.confirm-order {
+    width: 100%;
+    padding: 14px;
+    background-color: white;
+    color: black;
+    border: 2px solid white;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.confirm-order:hover {
+    background-color: transparent;
+    color: white;
+    transform: scale(1.03);
+}
+
+
+/* ==================== QUAY LẠI GIỎ HÀNG ==================== */
+
+.back-cart {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 30px;
+    padding: 12px 20px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.back-cart:hover {
+    background-color: white;
+    color: black;
+
+    transform: scale(1.03);
+}
+
+
+/* ==================== POPUP ==================== */
+
+.payment-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+/* ==================== HỘP THANH TOÁN ==================== */
+
+.payment-box {
+    position: relative;
+    display: flex;
+    width: 800px;
+    min-height: 400px;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+/* ==================== MÀU ĐEN TRƯỢT ==================== */
+
+.payment-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    background-color: black;
+    transition: left 0.5s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.payment-box.bank-mode::before {
+    left: 0;
+}
+/* ==================== BÊN TRÁI ==================== */
+
+.payment-left {
+    flex: 1;
+    padding: 40px;
+    box-sizing: border-box;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    transition: color 0.5s ease;
+}
+.payment-left p {
+    line-height: 1.4;
+    margin: 8px 0;
+}
+/* ==================== BÊN PHẢI ==================== */
+
+.payment-right {
+    flex: 1;
+    padding: 40px;
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    transition: color 0.5s ease;
+}
+
+
+/* ==================== KHI CHUYỂN SANG BANK ==================== */
+
+.payment-box.bank-mode .payment-left {
+    color: white;
+}
+
+.payment-box.bank-mode .payment-right {
+    color: black;
+}
+
+/* ==================== COD ==================== */
+
+.cod-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cod-content h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.cod-content p {
+    line-height: 1.2;
+}
+
+
+/* ==================== QUAY LẠI COD ==================== */
+
+.bank-back-content {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+}
+
+.bank-back-content h2 {
+    margin: 0;
+    line-height: 1.2;
+}
+
+
+/* ==================== CHỌN NGÂN HÀNG ==================== */
+
+.bank-choice {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.bank-choice h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+
+/* ==================== QR ==================== */
+
+.qr-content {
+    display: none;
+    text-align: center;
+}
+
+.qr-content img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.qr-content p {
+    line-height: 1.5;
+    margin: 20px 0;
+    font-size: 17px;
+}
+
+/* ==================== NÚT THANH TOÁN ==================== */
+
+.confirm-cod,
+.bank-button,
+.back-cod,
+.confirm-bank {
+    padding: 14px 20px;
+    border: 2px solid;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+
+/* ==================== NÚT COD ==================== */
+
+.confirm-cod {
+    background-color: black;
+    color: white;
+    border-color: black;
+    align-self: center;
+    margin-top: 20px;
+}
+
+.confirm-cod:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.03);
+}
+
+
+/* ==================== NÚT BANK ==================== */
+
+.bank-button {
+    background-color: white;
+    color: black;
+    border-color: white;
+    align-self: center;
+}
+
+.bank-button:hover {
+    background-color: black;
+    color: white;
+    transform: scale(1.03);
+}
+
+
+/* ==================== NÚT QUAY LẠI COD ==================== */
+
+.back-cod {
+    background-color: white;
+    color: black;
+    border-color: white;
+    align-self: center;
+
+}
+
+.back-cod:hover {
+    background-color: black;
+    color: white;
+    transform: scale(1.03);
+}
+
+
+/* ==================== NÚT XÁC NHẬN BANK ==================== */
+
+.confirm-bank {
+    width: 100%;
+    background-color: black;
+    color: white;
+    border-color: black;
+}
+
+.confirm-bank:hover {
+    background-color: white;
+    color: black;
+
+    transform: scale(1.03);
+}
+
+.confirm-order:disabled {
+    background-color: gray;
+    color: lightgray;
+    border-color: gray;
+    cursor: not-allowed;
+    transform: none;
+}

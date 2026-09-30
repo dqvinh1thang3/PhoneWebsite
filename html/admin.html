@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin - Táo Dai</title>
+
+    <link rel="stylesheet" href="../css/admin.css">
+    <script src="../js/admin.js" defer></script>
+</head>
+
+<body>
+
+    <div class="admin">
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                <h1>Táo Dai</h1>
+                <p>ADMIN</p>
+            </div>
+
+            <nav class="menu">
+
+                <button class="menu-item active" data-page="tong-quan">
+                    TỔNG QUAN
+                </button>
+
+                <button class="menu-item" data-page="don-hang">
+                    ĐƠN HÀNG
+                </button>
+
+                <button class="menu-item" data-page="san-pham">
+                    SẢN PHẨM
+                </button>
+
+                <button class="menu-item" data-page="khach-hang">
+                    KHÁCH HÀNG
+                </button>
+
+                <button class="menu-item" data-page="doanh-thu">
+                    DOANH THU
+                </button>
+
+            </nav>
+
+            <button class="logout">
+                ĐĂNG XUẤT
+            </button>
+
+        </aside>
+
+
+        <main class="content">
+
+<!--------------------------------------------------------------------->
+<!------------------------ TỔNG QUAN ---------------------------------->
+            <section class="page active" id="tong-quan">
+
+                <h2>TỔNG QUAN</h2>
+                <p class="page-description">Tổng quan tình hình cửa hàng.</p>
+
+                <div class="overview-cards">
+
+                    <div class="overview-card">
+                        <p>TỔNG ĐƠN HÀNG 📦</p>
+                        <h3 id="tong-don-hang">0</h3>
+                    </div>
+
+                    <div class="overview-card">
+                        <p>ĐANG VẬN CHUYỂN 🚚</p>
+                        <h3 id="don-dang-giao">0</h3>
+                    </div>
+
+                    <div class="overview-card">
+                        <p>GIAO THÀNH CÔNG ✅</p>
+                        <h3 id="don-da-giao">0</h3>
+                    </div>
+
+                    <div class="overview-card">
+                        <p>ĐÃ HỦY ❌</p>
+                        <h3 id="don-da-huy">0</h3>
+                    </div>
+                </div>
+
+
+
+                <div class="revenue-overview">
+                    <div class="revenue-title">
+                        <p>TỔNG DOANH THU:</p>
+                    </div>
+
+                    <h3 id="tong-doanh-thu">0đ</h3>
+                    <p>Chỉ tính các đơn giao thành công</p>
+                </div>
+
+            </section>
+<!--------------------------------------------------------------------->
+<!------------------------ ĐƠN HÀNG ---------------------------------->
+            <section class="page" id="don-hang">
+                <div class="page-header">
+                    <h2>ĐƠN HÀNG</h2>
+                    <p>Quản lý các đơn hàng khách đã đặt.</p>
+                </div>
+
+                <div class="order-list">
+                    <!-- Đơn hàng chui vào đây -->
+                </div>
+            </section>
+
+<!--------------------------------------------------------------------
+--------------------------- SẢN PHẨM --------------------------------->
+            <section class="page" id="san-pham">
+
+                <div class="page-header">
+                    <h2>TỒN KHO</h2>
+                    <p>Quản lý số lượng sản phẩm trong kho.</p>
+                </div>
+
+
+                <div class="inventory-list">
+                    <!-- sp -->
+                </div>
+
+            </section>
+
+<!--------------------------------------------------------------------
+--------------------------- KHÁCH HÀNG --------------------------------->
+            <section class="page" id="khach-hang">
+
+                <div class="page-header">
+                    <h2>KHÁCH HÀNG</h2>
+                    <p>Quản lý thông tin khách hàng.</p>
+                </div>
+
+                <div class="customer-list">
+                    <!-- khách hàng -->
+                </div>
+            </section>
+
+<!--------------------------------------------------------------------
+--------------------------- DOANH THU --------------------------------->
+            <section class="page" id="doanh-thu">
+                <div class="page-header">
+                    <h2>DOANH THU</h2>
+                    <p>Thống kê doanh thu theo mức giá sản phẩm.</p>
+                </div>
+
+                <div class="khu-vuc-bieu-do">
+                    <div class="cot">
+                        <span class="gia-tri">0đ</span>
+                        <div class="thanh-cot"></div>
+                        <p class="ten-cot">Dưới 6 triệu</p>
+                    </div>
+
+                    <div class="cot">
+                        <span class="gia-tri">0đ</span>
+                        <div class="thanh-cot"></div>
+                        <p class="ten-cot">6 - 9 triệu</p>
+                    </div>
+
+                    <div class="cot">
+                        <span class="gia-tri">0đ</span>
+                        <div class="thanh-cot"></div>
+                        <p class="ten-cot">9 - 13 triệu</p>
+                    </div>
+
+                    <div class="cot">
+                        <span class="gia-tri">0đ</span>
+                        <div class="thanh-cot"></div>
+                        <p class="ten-cot">Trên 13 triệu</p>
+                    </div>
+                </div>
+
+
+                <div class="doanh-thu-thang">
+                    <div class="page-header">
+                        <h3>DOANH THU THEO THÁNG</h3>
+                        <p>Xem chi tiết các đơn hàng đã giao thành công.</p>
+                    </div>
+
+                    <select class="chon-thang"></select>
+                    
+                    <div class="tong-doanh-thu-thang">
+                        <span>Tổng doanh thu:</span>
+                        <strong>0đ</strong>
+                    </div>
+                    
+                    <div class="danh-sach-doanh-thu-thang"></div>
+
+                </div>
+
+            </section>
+<!----------------------------------------------------------------->
+        </main>
+    </div>
+</body>
+
+</html>

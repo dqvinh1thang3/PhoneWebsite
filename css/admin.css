@@ -1,0 +1,595 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+    color: rgb(34, 34, 34);
+    font-family: Arial, sans-serif;
+}
+
+.admin {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    padding: 30px 20px;
+    border-right: 1px solid rgb(229, 229, 229);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.logo p {
+    margin: 5px 0 0;
+    color: rgb(136, 136, 136);
+    font-size: 13px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu-item,
+.logout {
+    width: 100%;
+    padding: 14px 15px;
+    background-color: transparent;
+    color: rgb(68, 68, 68);
+    border: none;
+    border-radius: 10px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.menu-item:hover,
+.menu-item.active {
+    background-color: rgb(240, 240, 240);
+    color: rgb(0, 0, 0);
+}
+
+.logout {
+    margin-top: auto;
+    color: rgb(211, 51, 51);
+}
+
+.logout:hover {
+    background-color: rgb(255, 240, 240);
+}
+
+.content {
+    flex: 1;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 40px;
+    background-color: rgb(250, 250, 250);
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.page h2 {
+    margin-top: 0;
+    font-size: 26px;
+}
+
+.page-header {
+    margin-bottom: 25px;
+}
+
+.page-header h2 {
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    margin: 0;
+    color: rgb(136, 136, 136);
+}
+
+.order-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.order {
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(229, 229, 229);
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.order-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.order-top h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.order-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 30px;
+}
+
+.order-info p {
+    margin: 0;
+    color: rgb(85, 85, 85);
+}
+
+.order-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgb(238, 238, 238);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* ================= TỔNG QUAN ================= */
+
+.page-description {
+    margin-top: -10px;
+    margin-bottom: 25px;
+    color: rgb(136, 136, 136);
+}
+
+.overview-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.overview-card {
+    padding: 25px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(229, 229, 229);
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.overview-card p {
+    margin: 0 0 15px;
+    color: rgb(136, 136, 136);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.overview-card h3 {
+    margin: 0;
+    font-size: 30px;
+}
+
+.revenue-overview {
+    margin-top: 20px;
+    padding: 25px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(229, 229, 229);
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.revenue-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.revenue-title p {
+    margin: 0;
+    color: rgb(136, 136, 136);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.revenue-overview h3 {
+    margin: 10px 0 10px;
+    font-size: 28px;
+}
+
+.revenue-overview > p {
+    margin: 0;
+    color: rgb(153, 153, 153);
+    font-size: 13px;
+}
+
+
+/* ====================== ĐƠN HÀNG ================= */
+
+.order-status {
+    padding: 8px 8px;
+    border: none;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.status-chuan-bi {
+    background-color: rgb(232, 245, 233);
+    color: orange;
+}
+
+.status-van-chuyen {
+    background-color: rgb(255, 243, 224);
+    color: orange;
+}
+
+.status-thanh-cong {
+    background-color: rgb(232, 245, 233);
+    color: green;
+}
+
+.status-huy {
+    background-color: rgb(255, 235, 238);
+    color: rgb(172, 23, 23);
+}
+
+.save-status {
+    padding: 8px 20px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(170, 170, 170);
+    font-weight: bold;
+    cursor: default;
+    transition: 0.2s ease;
+}
+
+.save-status.changed {
+    background-color: rgb(34, 34, 34);
+    color: rgb(255, 255, 255);
+    border-color: rgb(34, 34, 34);
+    cursor: pointer;
+}
+
+.save-status.changed:hover {
+    background-color: rgb(68, 68, 68);
+    transform: scale(1.05);
+}
+
+.order-products {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgb(238, 238, 238);
+}
+
+.order-products > p {
+    margin: 0 0 10px;
+    font-weight: bold;
+}
+
+.order-product {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+    background-color: rgb(247, 247, 247);
+    border-radius: 8px;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+
+/* ================= TỒN KHO ================= */
+
+.inventory-list {
+    display: grid;
+    margin-top: 50px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    max-height: 450px;
+    overflow-y: auto;
+    padding: 5px;
+}
+
+.inventory-item {
+    padding: 18px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(229, 229, 229);
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.inventory-item h3 {
+    margin: 0 0 15px;
+    font-size: 17px;
+}
+
+.inventory-storage {
+    margin: -8px 0 15px;
+    color: rgb(136, 136, 136);
+    font-size: 13px;
+}
+
+.inventory-stock {
+    margin: 0 0 15px;
+    color: rgb(119, 119, 119);
+    font-size: 14px;
+}
+
+.inventory-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.inventory-control button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.inventory-control button:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.inventory-control span {
+    min-width: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.inventory-save {
+    width: 100%;
+    margin-top: 15px;
+    padding: 8px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(170, 170, 170);
+    font-weight: bold;
+    cursor: default;
+    transition: 0.2s ease;
+}
+
+.inventory-save.changed {
+    background-color: rgb(34, 34, 34);
+    color: rgb(255, 255, 255);
+    border-color: rgb(34, 34, 34);
+    cursor: pointer;
+}
+
+.inventory-save.changed:hover {
+    background-color: rgb(68, 68, 68);
+}
+
+
+/* ================= KHÁCH HÀNG ================= */
+
+.customer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.customer {
+    padding: 20px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(229, 229, 229);
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.04);
+}
+
+.customer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.customer-top h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.customer-top span {
+    color: rgb(136, 136, 136);
+    font-size: 13px;
+}
+
+.customer-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 30px;
+}
+
+.customer-info p {
+    margin: 0;
+    color: rgb(85, 85, 85);
+}
+
+
+/* ================= THANH TOÁN TRONG ĐƠN HÀNG ================= */
+
+.payment-info {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgb(238, 238, 238);
+    display: flex;
+    gap: 50px;
+}
+
+.payment-info p {
+    margin: 0;
+    color: rgb(85, 85, 85);
+}
+
+
+/* ================= TRẠNG THÁI THANH TOÁN ================= */
+
+.payment-status.chua-thanh-toan {
+    color: orange;
+}
+
+.payment-status.da-thanh-toan {
+    color: green;
+}
+
+
+/* ================= DOANH THU ================= */
+
+.khu-vuc-bieu-do {
+    height: 450px;
+    padding: 30px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(227, 227, 227);
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.04);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+.cot {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.gia-tri {
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.thanh-cot /* CỘT CAO LÊN */ { 
+    width: 80px;
+    height: 0;
+    background: rgb(32, 32, 32);
+    border-radius: 10px 10px 0 0;
+    transition: height 0.3s ease;
+}
+
+.ten-cot {
+    margin: 12px 0 0;
+    color: rgb(71, 71, 71);
+    font-size: 13px;
+    text-align: center;
+}
+
+
+/* ================= DOANH THU THEO THÁNG ================= */
+
+.doanh-thu-thang {
+    margin-top: 25px;
+    padding: 25px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(229, 229, 229);
+    border-radius: 15px;
+}
+
+.doanh-thu-thang h3 {
+    margin: 0 0 8px;
+    font-size: 20px;
+}
+
+.chon-thang {
+    margin-top: 15px;
+    padding: 10px 15px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+    font-size: 14px;
+    cursor: pointer;
+}
+/* Tổng doanh thu tháng */
+
+.tong-doanh-thu-thang {
+    margin-top: 20px;
+    padding: 18px 20px;
+    background: rgb(245, 245, 245);
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tong-doanh-thu-thang span {
+    font-size: 15px;
+    color: rgb(102, 102, 102);
+}
+.tong-doanh-thu-thang strong {
+    font-size: 22px;
+}
+
+
+/* Danh sách đơn hàng */
+.danh-sach-doanh-thu-thang {
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Từng đơn hàng */
+.don-doanh-thu {
+    padding: 18px 20px;
+    background: rgb(250, 250, 250);
+    border: 1px solid rgb(229, 229, 229);
+    border-radius: 12px;
+}
+
+.don-doanh-thu h3 {
+    margin: 0 0 12px;
+    font-size: 16px;
+}
+
+.don-doanh-thu p {
+    margin: 6px 0;
+    color: rgb(102, 102, 102);
+    font-size: 14px;
+}
+
+
+/* Không có doanh thu */
+
+.don-doanh-thu.trong {
+    text-align: center;
+    padding: 30px;
+    color: rgb(153, 153, 153);
+}
+

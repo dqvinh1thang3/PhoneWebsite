@@ -1,0 +1,595 @@
+/*=============== LOGO ================*/
+header {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    right: 20px;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: rgb(44, 40, 40);
+    border: 2px solid rgb(44, 40, 40);
+    border-radius: 30px;
+
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s;
+}
+header::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: -10px;
+    right: -20px;
+    height: 11px;
+    background-color: white;
+}
+header.hide {
+    transform: translateY(-120%);
+}
+
+.logo img {
+    width: 120px;
+}
+.search {
+    width: 500px;
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 30px;
+    margin-right: 50px;
+}
+.search img {
+    width:23px;
+    position: relative;
+    top: 3.5px;
+    left: 2px;
+}
+
+.search input {
+    border: none;
+    outline: none;
+    width: 90%;
+    font-size: 16px;
+    position: relative;
+    bottom: 3px;
+}
+.user {
+    font-size: 25px;
+    cursor: pointer;
+}
+.user img {
+    width: 30px;
+    margin-right: 20px;
+}
+/*=============== BỐ CỤC ============== */
+
+.shop {
+    padding-top: 120px;
+    display: flex;
+    gap: 30px;
+    background-color: rgb(255, 253, 253);
+}
+
+.content {
+    flex: 1;
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+
+/* ============ BỘ LỌC ============ */
+
+.filter {
+    position: sticky;
+    top: 70px;
+    width: 180px;
+    padding: 20px;
+    background-color: rgba(168, 166, 166, 0.666);
+    border-radius: 10px;
+    margin-left: 30px;
+    height: 500px;
+    margin: 30px 140px 50px 50px;
+    overflow-y: auto;
+}
+
+.filter::-webkit-scrollbar {
+    width: 3px;}    
+.filter::-webkit-scrollbar-thumb {
+    background-color: rgba(168, 166, 166, 0.666);
+    border-radius: 50px;}
+.filter::-webkit-scrollbar-track {
+    margin: 10px 0;}
+
+.filter label {
+    display: block;
+    margin-bottom: 8px;
+    color: black;
+    font-weight: 500;
+    cursor: pointer;
+}
+.head-filter {
+    font-size: 20px;
+    color: black;
+    margin: 8px 0 0 5px;}
+.title-filter {
+    margin: 15px 0 10px 5px;
+    color: black;}
+.line {
+    border: none;
+    border-top: 1px solid black;
+    margin: 5px 0;}
+
+.filter input[type="radio"],
+.filter input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    accent-color: black;
+
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+
+/* ========= CÁC SẢN PHẨM ========== */
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.product {
+    width: 100%;
+    max-width: 230px;
+    padding: 20px;
+    background-color: rgba(168, 166, 166, 0.666);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.2s;
+    box-shadow: 0 1.5px 5px rgba(0, 0, 0, 0.378);
+
+    height: 400px;
+    position: relative;
+}
+.product:hover {
+    transform: translateY(-2.5px);
+    box-shadow: 0 4px 15px black;
+    cursor: default;}
+
+.no-product {
+    margin-left: 300px;
+    font-size: large;
+    color: white;
+}
+
+.sale {
+    position: absolute;
+    white-space: pre-wrap;
+    top: 40px;
+    right: -40px;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    padding: 7px 29px 7px 5px;
+    font-weight: bold;
+    transform: rotate(30deg);
+    box-shadow: 5px 5px 10px gray;
+}
+
+.pro-img {
+    width: 200px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pro-img img {
+    width: 150%;
+    height: 150%;
+    object-fit: contain;
+}
+.pro-img2 {
+    width: 200px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pro-img2 img {
+    width: 130%;
+    height: 130%;
+    object-fit: contain;
+}
+.pro-img3 {
+    width: 200px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pro-img3 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.name {
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    margin-top: -5px;
+}
+
+.price {
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    margin-top: -2px;
+}
+
+/* ========= BUTTON ========== */
+
+.but-xemthem {
+    cursor: pointer;
+    margin-top: 10px;
+    border: 2px solid rgb(78, 78, 78);;
+    width: 100px;
+    border-radius: 20px;
+    background-color: rgb(78, 78, 78);
+    color: white;
+    transition: 0.3s;
+    font-size: 12px;
+    padding: 15px;
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.344);
+}
+.but-xemthem:hover {
+    transform: scale(1.05);
+    background-color: rgb(78, 78, 78);
+    box-shadow: 0 3px 10px black;
+
+}
+/* ============ FOOTER ============ */
+footer {
+    display: flex;
+    justify-content: left;
+    gap: 350px;
+    align-items: center;
+    background-color: rgb(44, 40, 40);
+    color: white;
+    padding: 30px 60px;
+    border-radius: 15px;
+}
+
+.footer-logo img {
+    width: 100px;
+}
+.footer-info {
+    margin-left: -300px;
+    margin-right: 400px;
+}
+.footer-info p {
+    white-space: pre-wrap;
+    margin: 8px 0;
+}
+
+.footer-social {
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    margin-top: -25px;
+    cursor: default;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: -5px;
+}
+
+.social-icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.social-icon img:hover {
+    transform: scale(1.2);
+}
+
+/* ===========================================================
+============================ MODAL ==========================
+==========================================================*/
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    width: 800px;
+    min-height: 540px;
+    background-color: rgb(170, 170, 170);
+    border: 2px solid white;
+    border-radius: 25px;
+    position: relative;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.modal-body {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* ẢNH SẢN PHẨM */
+.modal-left {
+    width: 50%;
+    min-height: 440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid rgb(180, 180, 180);
+}
+
+.modal-img {
+    width: 320px;
+    height: 400px;
+    object-fit: contain;
+}
+
+/* THÔNG TIN SẢN PHẨM */
+.modal-right {
+    width: 50%;
+    padding-left: 35px;
+    box-sizing: border-box;
+    color: black;
+}
+
+.modal-name {
+    color: black;
+    font-size: 30px;
+    margin: 0 0 15px 0;
+}
+
+.modal-status::before {
+    content: "Trạng thái:";
+    margin-right: 8px;
+}
+
+.modal-warranty::before {
+    content: "Bảo hành:";
+    margin-right: 8px;
+}
+
+.profile {
+    width: 100%;
+    background-color: rgb(195, 195, 195);
+    border: 1px solid rgb(150, 150, 150);
+    border-radius: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.profile hr {
+    border: none;
+    border-top: 1px solid rgb(190, 190, 190);
+    margin: 15px 0;
+}
+
+.profile h3 {
+    color: black;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.modal-right p {
+    color: black;
+    font-size: 17px;
+    margin: 15px 0;
+}
+
+.modal-storage::before {
+    content: "Bộ nhớ:";
+    margin-right: 8px;
+}
+
+.modal-charge::before {
+    content: "Cáp sạc:";
+    margin-right: 8px;
+}
+
+.modal-hz::before {
+    content: "Tần số:";
+    margin-right: 8px;
+}
+
+/* GIÁ */
+.priceset {
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.modal-price::before {
+    content: "Giá tiền:";
+    margin-right: 10px;
+}
+
+/* NÚT ĐÓNG */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    border: none;
+    background: none;
+    color: black;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.close:hover {
+    transform: scale(1.15);
+}
+
+/* HAI NÚT */
+.modal-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.but-cart,
+.but-buy {
+    flex: 1;
+    padding: 14px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.but-cart {
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+}
+
+.but-buy {
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+}
+
+.but-cart:hover,
+.but-buy:hover {
+    transform: scale(1.03);
+}
+/*================= Giỏ hàng ==================*/
+.cart-float {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: rgb(44, 40, 40);
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1500;
+}
+.cart-float img {
+    width: 35px;
+}
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -5px;
+    width: 24px;
+    height: 24px;
+    background-color: red;
+    border: 1px solid black;
+    box-shadow: 0 2px 10px red;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+}
+/*================= MENU TÀI KHOẢN =================*/
+
+.user {
+    position: relative;
+}
+.user-menu {
+    display: none;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 210px;
+    padding: 18px;
+    background-color: white;
+    border: 1px solid rgb(210, 210, 210);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    z-index: 1100;
+}
+
+.user-fullname,
+.user-username {
+    margin: 5px 0;
+    color: black;
+}
+
+.user-fullname {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.user-username {
+    color: rgb(100, 100, 100);
+    font-size: 14px;
+}
+
+.login-account,
+.logout-account {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-account {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+}
+
+.logout-account {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.login-account:hover {
+    background-color: rgb(60, 60, 60);
+    transform: scale(1.02);
+    transition: transform 0.2s;
+}
+
+.logout-account:hover {
+    background-color: rgb(240, 240, 240);
+    transform: scale(1.02);
+    transition: transform 0.2s;
+}

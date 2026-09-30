@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang đăng nhập</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="../js/login.js" defer></script>
+</head>
+<body>
+    <main class="login-container">
+        <div class="login-form">
+        <h1>ĐĂNG NHẬP</h1>
+
+        <form>
+            <label for="login-username">Tài khoản</label>
+            <input 
+                type="text" 
+                id="login-username"
+                name="username"
+                placeholder="Nhập tài khoản"
+                required
+            >
+
+            <label for="login-password">Mật khẩu</label>
+            <input 
+                type="password"
+                id="login-password"
+                name="password"
+                placeholder="Nhập mật khẩu"
+                required
+            >
+
+            <button type="submit">ĐĂNG NHẬP</button>
+            <p class="login-message"></p>
+        </form>
+        </div>
+
+        <div class="register-form">
+        
+            <h1>ĐĂNG KÝ</h1>
+
+            <form>
+                <div class="row">
+                    <label for="register-fullname">Họ và tên</label>
+                    <input 
+                        type="text"
+                        id="register-fullname"
+                        name="fullname"
+                        placeholder="Nhập họ và tên"
+                        required
+                    >
+                </div>
+                <div class="row">
+                    <label for="register-username">Tài khoản</label>
+                    <input 
+                        type="text"
+                        id="register-username"
+                        name="username"
+                        placeholder="Nhập tài khoản"
+                        required
+                    >
+                </div>
+                <div class="row">
+                    <label for="register-email">Email</label>
+                    <input 
+                        type="email"
+                        id="register-email"
+                        name="email"
+                        placeholder="Nhập email"
+                        required
+                    >
+                </div>
+                <div class="row">
+                    <label for="register-password">Mật khẩu</label>
+                    <input 
+                        type="password"
+                        id="register-password"
+                        name="password"
+                        placeholder="Nhập mật khẩu"
+                        required
+                    >
+                </div>
+                <div class="row">
+                    <label for="register-confirm-password">Xác nhận mật khẩu</label>
+                    <input 
+                        type="password"
+                        id="register-confirm-password"
+                        name="confirm_password"
+                        placeholder="Nhập lại mật khẩu"
+                        required
+                    >
+                    <p class="register-message"></p>
+                </div>
+                <div class="row">
+                    <button type="submit" id="register-button">ĐĂNG KÝ</button>
+                </div>
+            </form>
+        </div>
+
+
+<!------------------------Phần bị ẩn-------------------------------->
+        <div class="welcome-panel">
+            <div class="welcome-login">
+                <h1>Xin chào!</h1>
+                <p>
+                    Nếu bạn là thành viên mới,
+                    hãy đăng ký để bắt đầu mua sắm.
+                </p>
+
+                <button id="show-register">ĐĂNG KÝ</button>
+            </div>
+
+            <div class="welcome-register">
+                <h1>Mừng bạn quay trở lại!</h1>
+                <p>
+                    Hãy đăng nhập để sắm những chiếc
+                    iPhone đời mới nhất nào.
+                </p>
+
+                <button id="show-login">ĐĂNG NHẬP</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

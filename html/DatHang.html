@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Đặt hàng - Táo Dai</title>
+
+    <link rel="stylesheet" href="../css/DatHang.css">
+    <script src="../js/DatHang.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+
+    <header>
+        <h1>THÔNG TIN ĐẶT HÀNG</h1>
+    </header>
+
+
+    <!-- ==================== THÔNG TIN ĐẶT HÀNG ==================== -->
+
+    <main class="order-container">
+
+        <div class="customer-info">
+
+            <h2>THÔNG TIN NHẬN HÀNG</h2>
+
+            <input type="text"
+                   id="hoTen"
+                   placeholder="Họ và tên"
+                   required>
+
+            <input type="tel"
+                   id="soDienThoai"
+                   placeholder="Số điện thoại"
+                   required>
+
+            <input type="text"
+                   id="diaChi"
+                   placeholder="Địa chỉ nhận hàng"
+                   required>
+
+            <textarea id="ghiChu"
+                      placeholder="Ghi chú"></textarea>
+
+        </div>
+
+
+        <!-- ==================== ĐƠN HÀNG ==================== -->
+
+        <div class="order-right">
+
+            <div class="order-summary">
+
+                <h2>ĐƠN HÀNG:</h2>
+
+                <div class="order-products">
+                    <!-- Sản phẩm được JS thêm vào -->
+                </div>
+
+                <p>
+                    Tổng tiền:
+                    <span class="order-total">0đ</span>
+                </p>
+
+                <button class="confirm-order">
+                    XÁC NHẬN ĐẶT HÀNG
+                </button>
+
+            </div>
+
+            <a href="GioHang.html">
+                <button class="back-cart">
+                    ← QUAY LẠI GIỎ HÀNG
+                </button>
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- ==================== POPUP THANH TOÁN ==================== -->
+
+    <div class="payment-overlay">
+
+        <div class="payment-box">
+
+            <!-- ==================== BÊN TRÁI ==================== -->
+
+            <div class="payment-left">
+
+                <!-- COD ban đầu -->
+
+                <div class="cod-content">
+
+                    <h2>THANH TOÁN KHI NHẬN HÀNG</h2>
+                    <p>- Hàng giao đến nơi, bạn kiểm tra hàng rồi thanh toán.</p>
+                    <p>- Đơn hàng được <strong>FREE SHIP</strong>.</p>
+                    <p>- Nếu không nhận hàng, thanh toán 50.000đ tiền ship.</p>
+
+                    <button class="confirm-cod">
+                        MUA VỚI HÌNH THỨC NÀY
+                    </button>
+
+                </div>
+
+
+                <!-- Nội dung khi chuyển sang ngân hàng -->
+
+                <div class="bank-back-content">
+
+                    <h2>
+                        BẠN MUỐN THANH TOÁN SAU KHI ĐÃ KIỂM TRA HÀNG?
+                    </h2>
+
+                    <button class="back-cod">
+                        THANH TOÁN KHI NHẬN HÀNG
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==================== BÊN PHẢI ==================== -->
+
+            <div class="payment-right">
+
+                <!-- Chọn ngân hàng -->
+
+                <div class="bank-choice">
+
+                    <h2>BẠN MUỐN THANH TOÁN LUÔN?</h2>
+
+                    <button class="bank-button">
+                        THANH TOÁN QUA NGÂN HÀNG
+                    </button>
+
+                </div>
+
+
+                <!-- QR -->
+
+                <div class="qr-content">
+
+                    <img src="../images/qr.png"
+                         alt="Mã QR thanh toán">
+
+                    <p>
+                        <strong>LƯU Ý:</strong> Chuyển khoản xong mới bấm "XÁC NHẬN"
+                    </p>
+
+                    <button class="confirm-bank">
+                        XÁC NHẬN
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
