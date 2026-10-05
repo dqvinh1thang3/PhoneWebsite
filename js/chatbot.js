@@ -51,60 +51,34 @@ chatClose.addEventListener("click", function() {
 // ============================================================
 
 searchInput.addEventListener("keydown", function(event) {
-
     if (event.key === "Enter") {
-
         event.preventDefault();
-
         const cauHoi = searchInput.value.trim();
-
         if (cauHoi === "") {
             return;
         }
-
         chatBox.style.display = "block";
-
         count = 1;
-
         guiTinNhan(cauHoi);
-
         searchInput.value = "";
     }
-
 });
-
 
 // ============================================================
 // GỬI TIN NHẮN
 // ============================================================
-
 function guiTinNhan(cauHoi) {
-
     const tinNhan = document.createElement("div");
-
     tinNhan.classList.add("user-message");
-
     tinNhan.innerHTML = cauHoi;
-
     chatContent.appendChild(tinNhan);
-
     chatInput.value = "";
 
-
     // TỰ CUỘN XUỐNG CUỐI CHAT
-
     chatContent.scrollTop = chatContent.scrollHeight;
-
-
     const cauHoiNho = cauHoi.toLowerCase();
 
-
-    // ========================================================
-    // NHẬN DIỆN DÒNG MÁY
-    // ========================================================
-
     let coDongMay = false;
-
 
     // --------------------------------------------------------
     // IPHONE 15 PRO MAX
@@ -125,7 +99,6 @@ function guiTinNhan(cauHoi) {
         }
 
         sanPhamDangHoi = "iphone 15 pro max";
-
         coDongMay = true;
     }
 
@@ -146,10 +119,8 @@ function guiTinNhan(cauHoi) {
         }
 
         sanPhamDangHoi = "iphone 15 pro";
-
         coDongMay = true;
     }
-
 
     // --------------------------------------------------------
     // IPHONE 17 PRO MAX
@@ -170,7 +141,6 @@ function guiTinNhan(cauHoi) {
         }
 
         sanPhamDangHoi = "iphone 17 pro max";
-
         coDongMay = true;
     }
 
@@ -190,10 +160,8 @@ function guiTinNhan(cauHoi) {
         }
 
         sanPhamDangHoi = "iphone 15";
-
         coDongMay = true;
     }
-
 
     // --------------------------------------------------------
     // IPHONE 13
@@ -210,10 +178,8 @@ function guiTinNhan(cauHoi) {
         }
 
         sanPhamDangHoi = "iphone 13";
-
         coDongMay = true;
     }
-
 
     // --------------------------------------------------------
     // IPHONE 12 PRO - KHÔNG CÓ
@@ -226,10 +192,8 @@ function guiTinNhan(cauHoi) {
     ) {
 
         sanPhamDangHoi = "khong co";
-
         dungLuongDangHoi = "";
         yDinhDangHoi = "";
-
         coDongMay = true;
     }
 
@@ -251,7 +215,6 @@ function guiTinNhan(cauHoi) {
         }
 
         sanPhamDangHoi = "iphone 12";
-
         coDongMay = true;
     }
 
@@ -267,13 +230,10 @@ function guiTinNhan(cauHoi) {
     ) {
 
         sanPhamDangHoi = "khong co";
-
         dungLuongDangHoi = "";
         yDinhDangHoi = "";
-
         coDongMay = true;
     }
-
 
     // --------------------------------------------------------
     // IPHONE 11 - KHÔNG CÓ
@@ -287,13 +247,10 @@ function guiTinNhan(cauHoi) {
     ) {
 
         sanPhamDangHoi = "khong co";
-
         dungLuongDangHoi = "";
         yDinhDangHoi = "";
-
         coDongMay = true;
     }
-
 
     // --------------------------------------------------------
     // IPHONE XS
@@ -311,10 +268,8 @@ function guiTinNhan(cauHoi) {
         }
 
         sanPhamDangHoi = "iphone xs";
-
         coDongMay = true;
     }
-
 
     // ========================================================
     // IPHONE KHÔNG CÓ
@@ -329,14 +284,11 @@ function guiTinNhan(cauHoi) {
     ) {
 
         sanPhamDangHoi = "khong co";
-
         dungLuongDangHoi = "";
         yDinhDangHoi = "";
     }
-
-
     // ========================================================
-    // ANDROID / HÃNG KHÁC
+    // HÃNG KHÁC
     // ========================================================
 
     if (
@@ -349,23 +301,18 @@ function guiTinNhan(cauHoi) {
     ) {
 
         sanPhamDangHoi = "khong co";
-
         dungLuongDangHoi = "";
         yDinhDangHoi = "";
     }
-
-
     // ========================================================
-    // NHẬN DIỆN DUNG LƯỢNG
+    // DUNG LƯỢNG
     // ========================================================
 
     if (
         cauHoiNho.includes("1tb") ||
         cauHoiNho.includes("1 tb")
     ) {
-
         dungLuongDangHoi = "1TB";
-
     }
 
     else if (
@@ -373,9 +320,7 @@ function guiTinNhan(cauHoi) {
         cauHoiNho.includes("512 gb") ||
         cauHoiNho.includes("512")
     ) {
-
         dungLuongDangHoi = "512";
-
     }
 
     else if (
@@ -383,9 +328,7 @@ function guiTinNhan(cauHoi) {
         cauHoiNho.includes("256 gb") ||
         cauHoiNho.includes("256")
     ) {
-
         dungLuongDangHoi = "256";
-
     }
 
     else if (
@@ -393,9 +336,7 @@ function guiTinNhan(cauHoi) {
         cauHoiNho.includes("128 gb") ||
         cauHoiNho.includes("128")
     ) {
-
         dungLuongDangHoi = "128";
-
     }
 
     else if (
@@ -403,13 +344,12 @@ function guiTinNhan(cauHoi) {
         cauHoiNho.includes("64 gb") ||
         cauHoiNho.includes("64")
     ) {
-
         dungLuongDangHoi = "64";
     }
 
 
     // ========================================================
-    // NHẬN DIỆN Ý ĐỊNH
+    // KhÁC
     // ========================================================
 
     if (
@@ -417,9 +357,7 @@ function guiTinNhan(cauHoi) {
         cauHoiNho.includes("bao hanh") ||
         cauHoiNho.includes("bh")
     ) {
-
         yDinhDangHoi = "baohanh";
-
     }
 
     else if (
@@ -430,9 +368,7 @@ function guiTinNhan(cauHoi) {
         cauHoiNho.includes("số điện thoại") ||
         cauHoiNho.includes("so dien thoai")
     ) {
-
         yDinhDangHoi = "lienhe";
-
     }
 
     else if (
@@ -443,9 +379,7 @@ function guiTinNhan(cauHoi) {
         cauHoiNho.includes("nhiêu tiền") ||
         cauHoiNho.includes("nhieu tien")
     ) {
-
         yDinhDangHoi = "gia";
-
     }
 
     else if (
@@ -456,7 +390,6 @@ function guiTinNhan(cauHoi) {
         cauHoiNho.includes("tồn kho") ||
         cauHoiNho.includes("ton kho")
     ) {
-
         yDinhDangHoi = "tonkho";
     }
 
@@ -466,21 +399,15 @@ function guiTinNhan(cauHoi) {
     // ========================================================
 
     const traLoi = traLoiBot(cauHoiNho);
-
     const botMessage = document.createElement("div");
 
     botMessage.classList.add("bot-message");
-
     botMessage.innerHTML = traLoi;
-
     chatContent.appendChild(botMessage);
 
-
     // TỰ CUỘN XUỐNG CUỐI CHAT
-
     chatContent.scrollTop = chatContent.scrollHeight;
 }
-
 
 // ============================================================
 // BOT TRẢ LỜI
@@ -502,10 +429,8 @@ function traLoiBot(cauHoi) {
         cauHoi.includes("alo") ||
         cauHoi === "hi"
     ) {
-
         return "Dạ em có thể giúp gì ạ";
     }
-
 
     // ========================================================
     // CẢM ƠN
@@ -519,10 +444,8 @@ function traLoiBot(cauHoi) {
         cauHoi.includes("cam on") ||
         cauHoi.includes("thanks")
     ) {
-
         return "Dạ không có gì ạ";
     }
-
 
     // ========================================================
     // BÁN IPHONE
@@ -536,7 +459,6 @@ function traLoiBot(cauHoi) {
         cauHoi.includes("có bán iphone") ||
         cauHoi.includes("co ban iphone")
     ) {
-
         return "Dạ bên em chuyên bán iPhone ạ";
     }
 
@@ -563,11 +485,9 @@ function traLoiBot(cauHoi) {
         cauHoi.includes("có những máy") ||
         cauHoi.includes("co nhung may")
     ) {
-
         sanPhamDangHoi = "";
         dungLuongDangHoi = "";
         yDinhDangHoi = "";
-
         return "Dạ bên em hiện có iPhone Xs, iPhone 12, iPhone 13, iPhone 15, iPhone 15 Pro, iPhone 15 Pro Max và iPhone 17 Pro Max ạ";
     }
 
@@ -584,7 +504,6 @@ function traLoiBot(cauHoi) {
         cauHoi.includes("vivo") ||
         cauHoi.includes("realme")
     ) {
-
         return "bên em không còn máy này, anh chị có thể liên hệ zl: 0123456789 để tìm máy hợp lí với giá tiền ạ";
     }
 
@@ -592,19 +511,14 @@ function traLoiBot(cauHoi) {
     // ========================================================
     // BẢO HÀNH
     // ========================================================
-
     if (yDinhDangHoi === "baohanh") {
-
         return "Dạ tất cả sản phẩm bên em đều bảo hành 1 đổi 1 trong 12 tháng ạ";
     }
-
 
     // ========================================================
     // LIÊN HỆ
     // ========================================================
-
     if (yDinhDangHoi === "lienhe") {
-
         return "Dạ anh chị có thể liên hệ ZL: 0123456789 để được tư vấn ạ";
     }
 
@@ -628,10 +542,8 @@ function traLoiBot(cauHoi) {
         cauHoi.includes("nhận hàng") ||
         cauHoi.includes("nhan hang")
     ) {
-
         return "Dạ khi nhận máy anh chị được kiểm tra hàng ạ. Anh chị nhớ quay clip quá trình bóc hộp, nếu máy có lỗi bên em sẽ hỗ trợ đổi máy ạ";
     }
-
 
     // ========================================================
     // NGÂN SÁCH
@@ -652,23 +564,19 @@ function traLoiBot(cauHoi) {
         cauHoi.includes("duoi") ||
         cauHoi.includes("triệu") ||
         cauHoi.includes("trieu") ||
-        /\b\d+\s*-\s*\d+\s*(m|triệu|trieu)\b/.test(cauHoi) ||
-        /\b\d+\s*(m|triệu|trieu)\b/.test(cauHoi)
+        /\b\d+\s*-\s*\d+\s*(m|triệu|trieu|củ|đồng|khoai|lúa|tr|mét)\b/.test(cauHoi) ||
+        /\b\d+\s*(m|triệu|trieu|củ|đồng|khoai|lúa|tr|mét)\b/.test(cauHoi)
     ) {
-
         return traLoiTheoNganSach(cauHoi);
     }
-
 
     // ========================================================
     // DÒNG MÁY KHÔNG CÓ
     // ========================================================
 
     if (sanPhamDangHoi === "khong co") {
-
         return "bên em không còn máy này, anh chị có thể liên hệ zl: 0123456789 để tìm máy hợp lí với giá tiền ạ";
     }
-
 
     // ========================================================
     // HỎI GIÁ
@@ -680,10 +588,8 @@ function traLoiBot(cauHoi) {
             sanPhamDangHoi !== "" &&
             sanPhamDangHoi !== "khong co"
         ) {
-
             return traLoiGia();
         }
-
         return "Dạ anh muốn hỏi giá iPhone nào ạ";
     }
 
@@ -697,7 +603,6 @@ function traLoiBot(cauHoi) {
         sanPhamDangHoi !== "khong co" &&
         dungLuongDangHoi !== ""
     ) {
-
         return traLoiTheoSanPham();
     }
 
@@ -717,10 +622,8 @@ function traLoiBot(cauHoi) {
             sanPhamDangHoi !== "" &&
             sanPhamDangHoi !== "khong co"
         ) {
-
             return traLoiDungLuong();
         }
-
         return "Dạ anh đang hỏi dung lượng của iPhone nào ạ";
     }
 
@@ -735,14 +638,10 @@ function traLoiBot(cauHoi) {
             sanPhamDangHoi !== "" &&
             sanPhamDangHoi !== "khong co"
         ) {
-
             return traLoiTheoSanPham();
         }
-
         return "Dạ anh đang hỏi dung lượng của iPhone nào ạ";
     }
-
-
     return "Dạ em có thể giúp gì ạ";
 }
 
@@ -767,11 +666,9 @@ function traLoiTheoNganSach(cauHoi) {
         cauHoi.includes("2 đến 4 triệu") ||
         cauHoi.includes("2 den 4 trieu")
     ) {
-
         sanPhamDangHoi = "iphone xs";
         dungLuongDangHoi = "64";
         yDinhDangHoi = "";
-
         return "Dạ tầm 2 - 4 triệu bên em có iPhone Xs 64GB, giá gần 3 triệu ạ";
     }
 
@@ -790,7 +687,6 @@ function traLoiTheoNganSach(cauHoi) {
         cauHoi.includes("2 đến 5 triệu") ||
         cauHoi.includes("2 den 5 trieu")
     ) {
-
         sanPhamDangHoi = "iphone xs";
         dungLuongDangHoi = "64";
         yDinhDangHoi = "";
@@ -813,7 +709,6 @@ function traLoiTheoNganSach(cauHoi) {
         cauHoi.includes("3 đến 5 triệu") ||
         cauHoi.includes("3 den 5 trieu")
     ) {
-
         sanPhamDangHoi = "iphone xs";
         dungLuongDangHoi = "64";
         yDinhDangHoi = "";
@@ -836,11 +731,9 @@ function traLoiTheoNganSach(cauHoi) {
         cauHoi.includes("3 đến 6 triệu") ||
         cauHoi.includes("3 den 6 trieu")
     ) {
-
         sanPhamDangHoi = "iphone xs";
         dungLuongDangHoi = "64";
         yDinhDangHoi = "";
-
         return "Dạ tầm 3 - 6 triệu bên em có iPhone Xs 64GB, giá gần 3 triệu ạ";
     }
 
@@ -859,11 +752,9 @@ function traLoiTheoNganSach(cauHoi) {
         cauHoi.includes("4 đến 7 triệu") ||
         cauHoi.includes("4 den 7 trieu")
     ) {
-
         sanPhamDangHoi = "iphone 12";
         dungLuongDangHoi = "64";
         yDinhDangHoi = "";
-
         return "Dạ tầm 4 - 7 triệu bên em có iPhone 12 64GB, giá khoảng 7 triệu ạ";
     }
 
@@ -882,7 +773,6 @@ function traLoiTheoNganSach(cauHoi) {
         cauHoi.includes("7 đến 10 triệu") ||
         cauHoi.includes("7 den 10 trieu")
     ) {
-
         sanPhamDangHoi = "iphone 13";
         dungLuongDangHoi = "128";
         yDinhDangHoi = "";
@@ -905,7 +795,6 @@ function traLoiTheoNganSach(cauHoi) {
         cauHoi.includes("10 đến 13 triệu") ||
         cauHoi.includes("10 den 13 trieu")
     ) {
-
         sanPhamDangHoi = "iphone 15";
         dungLuongDangHoi = "256";
         yDinhDangHoi = "";
@@ -928,7 +817,6 @@ function traLoiTheoNganSach(cauHoi) {
         cauHoi.includes("13 đến 20 triệu") ||
         cauHoi.includes("13 den 20 trieu")
     ) {
-
         sanPhamDangHoi = "iphone 15 pro max";
         dungLuongDangHoi = "1TB";
         yDinhDangHoi = "";
@@ -949,7 +837,6 @@ function traLoiTheoNganSach(cauHoi) {
         cauHoi.includes("trên 20 triệu") ||
         cauHoi.includes("tren 20 trieu")
     ) {
-
         sanPhamDangHoi = "iphone 17 pro max";
         dungLuongDangHoi = "512";
         yDinhDangHoi = "";
@@ -970,7 +857,6 @@ function traLoiTheoNganSach(cauHoi) {
         cauHoi.includes("dưới 4 triệu") ||
         cauHoi.includes("duoi 4 trieu")
     ) {
-
         sanPhamDangHoi = "iphone xs";
         dungLuongDangHoi = "64";
         yDinhDangHoi = "";
@@ -980,7 +866,7 @@ function traLoiTheoNganSach(cauHoi) {
 
 
     // ========================================================
-    // SỐ TIỀN ĐƠN LẺ
+    // SỐ khác
     // ========================================================
 
     if (
@@ -988,7 +874,6 @@ function traLoiTheoNganSach(cauHoi) {
         cauHoi.includes("1 triệu") ||
         cauHoi.includes("1 trieu")
     ) {
-
         sanPhamDangHoi = "iphone xs";
         dungLuongDangHoi = "64";
         yDinhDangHoi = "";
@@ -1002,7 +887,6 @@ function traLoiTheoNganSach(cauHoi) {
         cauHoi.includes("2 triệu") ||
         cauHoi.includes("2 trieu")
     ) {
-
         sanPhamDangHoi = "iphone xs";
         dungLuongDangHoi = "64";
         yDinhDangHoi = "";
@@ -1016,7 +900,6 @@ function traLoiTheoNganSach(cauHoi) {
         cauHoi.includes("3 triệu") ||
         cauHoi.includes("3 trieu")
     ) {
-
         sanPhamDangHoi = "iphone xs";
         dungLuongDangHoi = "64";
         yDinhDangHoi = "";
@@ -1030,7 +913,6 @@ function traLoiTheoNganSach(cauHoi) {
         cauHoi.includes("4 triệu") ||
         cauHoi.includes("4 trieu")
     ) {
-
         sanPhamDangHoi = "iphone xs";
         dungLuongDangHoi = "64";
         yDinhDangHoi = "";
@@ -1086,7 +968,6 @@ function traLoiTheoNganSach(cauHoi) {
         cauHoi.includes("9 triệu") ||
         cauHoi.includes("9 trieu")
     ) {
-
         sanPhamDangHoi = "iphone 13";
         dungLuongDangHoi = "128";
         yDinhDangHoi = "";
@@ -1100,7 +981,6 @@ function traLoiTheoNganSach(cauHoi) {
         cauHoi.includes("10 triệu") ||
         cauHoi.includes("10 trieu")
     ) {
-
         sanPhamDangHoi = "iphone 15";
         dungLuongDangHoi = "256";
         yDinhDangHoi = "";
@@ -1152,9 +1032,7 @@ function traLoiTheoSanPham() {
     // ========================================================
 
     if (sanPhamDangHoi === "iphone xs") {
-
         if (dungLuongDangHoi === "64") {
-
             return "Dạ iPhone Xs 64GB bên em còn, giá loanh quanh 2 - 3 triệu ạ";
         }
 
@@ -1167,9 +1045,7 @@ function traLoiTheoSanPham() {
     // ========================================================
 
     if (sanPhamDangHoi === "iphone 12") {
-
         if (dungLuongDangHoi === "64") {
-
             return "Dạ iPhone 12 64GB bên em còn, giá loanh quanh 7 triệu ạ";
         }
 
@@ -1182,12 +1058,10 @@ function traLoiTheoSanPham() {
     // ========================================================
 
     if (sanPhamDangHoi === "iphone 13") {
-
         if (
             dungLuongDangHoi === "128" ||
             dungLuongDangHoi === "256"
         ) {
-
             return "Dạ iPhone 13 " + dungLuongDangHoi + "GB bên em còn, giá loanh quanh 8 - 9 triệu ạ";
         }
 
@@ -1200,9 +1074,7 @@ function traLoiTheoSanPham() {
     // ========================================================
 
     if (sanPhamDangHoi === "iphone 15") {
-
         if (dungLuongDangHoi === "256") {
-
             return "Dạ iPhone 15 256GB bên em còn, giá loanh quanh 10 - 11 triệu ạ";
         }
 
@@ -1215,9 +1087,7 @@ function traLoiTheoSanPham() {
     // ========================================================
 
     if (sanPhamDangHoi === "iphone 15 pro") {
-
         if (dungLuongDangHoi === "256") {
-
             return "Dạ iPhone 15 Pro 256GB bên em còn, giá loanh quanh 12 - 13 triệu ạ";
         }
 
@@ -1230,9 +1100,7 @@ function traLoiTheoSanPham() {
     // ========================================================
 
     if (sanPhamDangHoi === "iphone 15 pro max") {
-
         if (dungLuongDangHoi === "1TB") {
-
             return "Dạ iPhone 15 Pro Max 1TB bên em còn, giá loanh quanh 17 - 18 triệu ạ";
         }
 
@@ -1245,15 +1113,12 @@ function traLoiTheoSanPham() {
     // ========================================================
 
     if (sanPhamDangHoi === "iphone 17 pro max") {
-
         if (dungLuongDangHoi === "512") {
-
             return "Dạ iPhone 17 Pro Max 512GB bên em còn, giá loanh quanh 30 - 31 triệu ạ";
         }
 
         return "Dòng này nhà em chỉ còn bản 512GB thôi ạ, giá cũng không chênh nhiều";
     }
-
 
     return "Dạ em chưa tìm thấy sản phẩm này ạ";
 }
@@ -1273,7 +1138,6 @@ function traLoiGia() {
             dungLuongDangHoi === "" ||
             dungLuongDangHoi === "64"
         ) {
-
             return "Dạ iPhone Xs 64GB giá loanh quanh 2 - 3 triệu ạ";
         }
 
@@ -1289,7 +1153,6 @@ function traLoiGia() {
             dungLuongDangHoi === "" ||
             dungLuongDangHoi === "64"
         ) {
-
             return "Dạ iPhone 12 64GB giá loanh quanh 7 triệu ạ";
         }
 
@@ -1305,12 +1168,10 @@ function traLoiGia() {
             dungLuongDangHoi === "128" ||
             dungLuongDangHoi === "256"
         ) {
-
             return "Dạ iPhone 13 " + dungLuongDangHoi + "GB giá loanh quanh 8 - 9 triệu ạ";
         }
 
         if (dungLuongDangHoi === "") {
-
             return "Dạ iPhone 13 bên em có bản 128GB và 256GB, giá loanh quanh 8 - 9 triệu ạ";
         }
 
@@ -1321,12 +1182,10 @@ function traLoiGia() {
     // IPHONE 15
 
     if (sanPhamDangHoi === "iphone 15") {
-
         if (
             dungLuongDangHoi === "" ||
             dungLuongDangHoi === "256"
         ) {
-
             return "Dạ iPhone 15 256GB giá loanh quanh 10 - 11 triệu ạ";
         }
 
@@ -1337,12 +1196,10 @@ function traLoiGia() {
     // IPHONE 15 PRO
 
     if (sanPhamDangHoi === "iphone 15 pro") {
-
         if (
             dungLuongDangHoi === "" ||
             dungLuongDangHoi === "256"
         ) {
-
             return "Dạ iPhone 15 Pro 256GB giá loanh quanh 12 - 13 triệu ạ";
         }
 
@@ -1353,12 +1210,10 @@ function traLoiGia() {
     // IPHONE 15 PRO MAX
 
     if (sanPhamDangHoi === "iphone 15 pro max") {
-
         if (
             dungLuongDangHoi === "" ||
             dungLuongDangHoi === "1TB"
         ) {
-
             return "Dạ iPhone 15 Pro Max 1TB giá loanh quanh 17 - 18 triệu ạ";
         }
 
@@ -1369,12 +1224,10 @@ function traLoiGia() {
     // IPHONE 17 PRO MAX
 
     if (sanPhamDangHoi === "iphone 17 pro max") {
-
         if (
             dungLuongDangHoi === "" ||
             dungLuongDangHoi === "512"
         ) {
-
             return "Dạ iPhone 17 Pro Max 512GB giá loanh quanh 30 - 31 triệu ạ";
         }
 
@@ -1391,48 +1244,38 @@ function traLoiGia() {
 // ============================================================
 
 function traLoiDungLuong() {
-
     if (sanPhamDangHoi === "iphone xs") {
-
         return "Dạ iPhone Xs bên em chỉ còn bản 64GB thôi ạ";
     }
 
 
     if (sanPhamDangHoi === "iphone 12") {
-
         return "Dạ iPhone 12 bên em chỉ còn bản 64GB thôi ạ";
     }
 
 
     if (sanPhamDangHoi === "iphone 13") {
-
         return "Dạ iPhone 13 bên em còn bản 128GB với 256GB ạ";
     }
 
 
     if (sanPhamDangHoi === "iphone 15") {
-
         return "Dạ iPhone 15 bên em chỉ còn bản 256GB thôi ạ";
     }
 
 
     if (sanPhamDangHoi === "iphone 15 pro") {
-
         return "Dạ iPhone 15 Pro bên em chỉ còn bản 256GB thôi ạ";
     }
 
-
     if (sanPhamDangHoi === "iphone 15 pro max") {
-
         return "Dạ iPhone 15 Pro Max bên em chỉ còn bản 1TB thôi ạ";
     }
 
 
     if (sanPhamDangHoi === "iphone 17 pro max") {
-
         return "Dạ iPhone 17 Pro Max bên em chỉ còn bản 512GB thôi ạ";
     }
-
 
     return "Dạ anh đang hỏi dung lượng của iPhone nào ạ";
 }
@@ -1443,11 +1286,8 @@ function traLoiDungLuong() {
 // ============================================================
 
 chatForm.addEventListener("submit", function(event) {
-
     event.preventDefault();
-
     const cauHoi = chatInput.value.trim();
-
     if (cauHoi === "") {
         return;
     }
@@ -1457,12 +1297,8 @@ chatForm.addEventListener("submit", function(event) {
 
 
 chatInput.addEventListener("keydown", function(event) {
-
     if (event.key === "Enter") {
-
         event.preventDefault();
-
         chatForm.dispatchEvent(new Event("submit"));
     }
-
 });
