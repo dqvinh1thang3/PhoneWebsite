@@ -1,6 +1,6 @@
-//==== LẤY DỮ LIỆU GIỎ HÀNG ====
-const danhSachGioHang = JSON.parse(localStorage.getItem("gioHang")) || [];
-
+//==== LẤY DỮ LIỆU ĐẶT HÀNG ====
+const sanPhamMuaNgay = JSON.parse(localStorage.getItem("sanPhamMuaNgay"));
+const danhSachGioHang = sanPhamMuaNgay || JSON.parse(localStorage.getItem("gioHang")) || [];
 const confirmOrder = document.querySelector(".confirm-order");
 if (danhSachGioHang.length === 0) {
     confirmOrder.disabled = true;
@@ -139,8 +139,12 @@ function datHangThanhCong(phuongThucThanhToan) {
 
     //================================================
     paymentOverlay.style.display = "none";
-    localStorage.removeItem("gioHang");
-    localStorage.setItem("soLuongGio", 0);
+    if (sanPhamMuaNgay) {
+        localStorage.removeItem("sanPhamMuaNgay");
+    } else {
+        localStorage.removeItem("gioHang");
+        localStorage.setItem("soLuongGio", 0);
+    }
 
     alert("Đặt hàng thành công!\n\n" +
         "Lưu ý: Quay video khi bóc hộp sản phẩm!! " +

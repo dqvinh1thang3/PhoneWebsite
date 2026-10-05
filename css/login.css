@@ -1,12 +1,18 @@
 
+body {
+    background-color: rgb(53, 50, 55);
+}
+* {
+    font-family: sans-serif;
+}
 /* ================= LOGIN BOX ================= */
 .login-container {
     width: 900px;
-    height: 490px;
+    height: 520px;
     margin: 100px auto;
+    background-color: white;
     display: flex;
-    border: 4px double black;
-    border-radius: 25px;
+    border-radius: 50px;
     overflow: hidden;
     position: relative;
     box-shadow: 5px 5px 20px black;

@@ -11,14 +11,14 @@
      <!--HEAD-->
     <header>
         <div class="logo">
-            <a href="../index.html">          
+            <a href="../index.html">        
                 <img src="../images/logo.png" alt="logo">
             </a>
         </div>
         
         <div class="search">
             <img src="../find.png" alt="find">
-        <input type="text" placeholder=" Tìm kiếm sản phẩm..">
+        <input class="search-input" placeholder=" Bạn cần tìm gì? ...">
         </div>
         
         <div class="user">
@@ -250,7 +250,7 @@
     <div class="footer-info">
         <p>🌍 Address: Tây Hồ - Hà Nội</p>
         <p> ☎ Hotline: 0979 581 926</p>
-        <p>📨 For work: vinhdo207.cv@gmail.com</p>
+        <a href="../ThanhVienNhom/thanhvien.html" target="_blank">📨 Group members: Click here</a>
     </div>
 
     <div class="footer-social">
@@ -314,5 +314,32 @@
         <span class="cart-count">0</span>
     </div>
 
+    <!-- ================= CHATBOT ================= -->
+
+    <div class="chatbot">
+        <button class="chat-button">💬</button>
+        <div class="chat-box">
+
+            <div class="chat-header">
+                <h3>Táo Dai Bot</h3>
+                <button class="chat-close">×</button>
+            </div>
+
+
+            <div class="chat-content">
+                <div class="bot-message">
+                    Xin chào! Táo Dai có thể giúp gì cho bạn?
+                </div>
+            </div>
+
+
+            <form class="chat-input">
+                <textarea placeholder="Nhập tin nhắn..."></textarea>
+                <button>Gửi</button>
+            </form>
+        </div>
+    </div>
+
+        <script src="../js/chatbot.js" defer></script>
 </body>
 </html>

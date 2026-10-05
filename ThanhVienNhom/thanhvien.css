@@ -1,0 +1,122 @@
+/* ==============================
+   CÀI ĐẶT CHUNG
+============================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(245, 245, 245);
+    color: rgb(30, 30, 30);
+}
+
+.member-page {
+    width: 90%;
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.member-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.member-header h1 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.member-header p {
+    font-size: 16px;
+    color: rgb(100, 100, 100);
+}
+
+.member-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    border: 2px solid rgb(220, 220, 220);
+    border-radius: 20px;
+    padding: 20px 30px;
+    margin-bottom: 30px;
+}
+
+.member-total span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.member-total strong {
+    font-size: 28px;
+}
+
+.member-list {
+    background-color: white;
+    border: 2px solid rgb(220, 220, 220);
+    border-radius: 25px;
+    padding: 30px;
+}
+
+.member-list h2 {
+    font-size: 22px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid rgb(230, 230, 230);
+    padding-bottom: 15px;
+}
+
+.member-card {
+    display: flex;
+    height: 300px;
+    align-items: center;
+    gap: 35px;
+    padding: 25px;
+    background-color: rgb(248, 248, 248);
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgb(210, 210, 210);
+}
+
+.member-image {
+    width: 200px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 2px solid rgb(210, 210, 210);
+    background-color: rgb(235, 235, 235);
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.member-info {
+    flex: 1;
+}
+
+.member-info h3 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.member-info p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: rgb(80, 80, 80);
+}
+
+.member-info strong {
+    color: rgb(30, 30, 30);
+}

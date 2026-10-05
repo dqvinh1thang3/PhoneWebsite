@@ -2,6 +2,36 @@
 const sanphams = document.querySelectorAll('.product');
 const BoLocGia = document.querySelectorAll('input[name="gia"]');
 
+//====================== KIỂM TRA TỒN KHO ======================
+
+function kiemTraTonKho() {
+
+    const danhSachSanPham = JSON.parse(localStorage.getItem("danhSachSanPham")) || [];
+
+    sanphams.forEach(function(sanpham) {
+        const ten = sanpham.querySelector(".name").innerHTML;
+        const bonho = sanpham.dataset.storage;
+        const sanPhamKho = danhSachSanPham.find(function(sanPham) {
+            return sanPham.ten === ten && sanPham.bonho === bonho;
+        });
+
+        if (sanPhamKho && sanPhamKho.tonKho === 0) {
+            const nutXemThem = sanpham.querySelector(".but-xemthem");
+
+            nutXemThem.innerHTML = "LIÊN HỆ";
+            nutXemThem.classList.add("het-hang");
+            nutXemThem.addEventListener("click", function(event) {
+                event.stopPropagation();
+                event.preventDefault();
+                alert("Sản phẩm đang hết hàng!\nLiên hệ Zalo: 0123456789");
+            });
+
+        }
+    });
+}
+
+kiemTraTonKho();
+
 let checkAll = ["", "", "", "",];
 /*==================
 checkAll[0] = nutgia.value
@@ -204,6 +234,10 @@ let sanPhamDangChon; // lưu thông tin sp giỏ hàng
 
 nutXemThem.forEach(function(nut) {
     nut.addEventListener('click', function() {
+
+        if (nut.classList.contains("het-hang")) {
+            return;
+        }
 
         const sanpham = nut.parentElement;
 
